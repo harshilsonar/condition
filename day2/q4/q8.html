@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calculateGPA(subjectGrades) {
+    let totalSubjects = subjectGrades.length;
+    let totalGradePoints = 0;
+
+    
+    for (let grade of subjectGrades) 
+    {
+        if (grade >= 90) {
+            totalGradePoints += 4.0; 
+        } else if (grade >= 80) {
+            totalGradePoints += 3.0; 
+        } else if (grade >= 70) {
+            totalGradePoints += 2.0; 
+        } else if (grade >= 60) {
+            totalGradePoints += 1.0; 
+        } else {
+            totalGradePoints += 0.0; 
+        }
+    }
+        }
+    
+    let gpa = totalGradePoints / totalSubjects;
+    return gpa.toFixed(2); 
+
+let grades = [85, 92, 78, 68, 90]; 
+
+let studentGPA = calculateGPA(grades);
+console.log(`Student GPA: ${studentGPA}`);
+
+    </script>
+</body>
+</html>

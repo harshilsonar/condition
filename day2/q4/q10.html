@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       
+const currencyRates = {
+    "USD_EUR": 0.85, 
+    "USD_GBP": 0.76, 
+    "EUR_USD": 1.18, 
+    "EUR_GBP": 0.89, 
+    "GBP_USD": 1.31, 
+    "GBP_EUR": 1.12, 
+};
+
+function convertCurrency(amount, fromCurrency, toCurrency)
+ {
+    let conversionKey = `${fromCurrency}_${toCurrency}`;
+
+    if (conversionKey in currencyRates) {
+        let convertedAmount = amount * currencyRates[conversionKey];
+        return convertedAmount.toFixed(2); 
+    } else {
+        console.log("Invalid currency conversion.");
+        return; 
+    }
+}
+
+let amount = 100; 
+let fromCurrency = "USD"; 
+let toCurrency = "EUR"; 
+
+
+let convertedAmount = convertCurrency(amount, fromCurrency, toCurrency);
+
+console.log(`${amount} ${fromCurrency} = ${convertedAmount} ${toCurrency}`);
+
+    </script>
+</body>
+</html>

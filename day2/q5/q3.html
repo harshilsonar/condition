@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function celsiusToFahrenheit(celsius)
+         {
+    return (celsius * 9/5) + 32;
+}
+
+function fahrenheitToCelsius(fahrenheit)
+ {
+    return (fahrenheit - 32) * 5/9;
+}
+
+let conversionType = prompt("Enter 'C' to convert from Celsius to Fahrenheit:");
+let conversionType1=prompt("'F' to convert from Fahrenheit to Celsius:");
+
+if (conversionType === 'C' || conversionType === 'c')
+ {
+    let celsius = parseFloat(prompt("Enter the temperature in Celsius:"));
+    if (!isNaN(celsius)) 
+    {
+        let fahrenheit = celsiusToFahrenheit(celsius);
+        console.log(`${celsius}°C is equal to ${fahrenheit.toFixed(2)}°F`);
+    } 
+    else 
+    {
+        console.log("Invalid input. Please enter a valid number.");
+    }
+} 
+
+
+else if (conversionType1 === 'F' || conversionType1 === 'f')
+ {
+    let fahrenheit = parseFloat(prompt("Enter the temperature in Fahrenheit:"));
+    if (!isNaN(fahrenheit))
+     {
+        let celsius = fahrenheitToCelsius(fahrenheit);
+        console.log(`${fahrenheit}°F is equal to ${celsius.toFixed(2)}°C`);
+    } else
+     {
+        console.log("Invalid input. Please enter a valid number.");
+    }
+}
+ else 
+ {
+    console.log("Invalid input. Please enter 'C' or 'F'.");
+}
+    </script>
+</body>
+</html>

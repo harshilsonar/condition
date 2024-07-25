@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      function checkPassOrFail(subject1, subject2, subject3, subject4, subject5) {
+    const passMarksPercentage = 40;
+    const totalMarksPerSubject = 100;
+
+    let percentage1 = (subject1 / totalMarksPerSubject) * 100;
+    let percentage2 = (subject2 / totalMarksPerSubject) * 100;
+    let percentage3 = (subject3 / totalMarksPerSubject) * 100;
+    let percentage4 = (subject4 / totalMarksPerSubject) * 100;
+    let percentage5 = (subject5 / totalMarksPerSubject) * 100;
+
+    if (percentage1 >= passMarksPercentage &&
+        percentage2 >= passMarksPercentage &&
+        percentage3 >= passMarksPercentage &&
+        percentage4 >= passMarksPercentage &&
+        percentage5 >= passMarksPercentage)
+         {
+        return "Pass";
+    } else {
+        return "Fail";
+    }
+}
+
+function promptForMarks(subject) {
+    let marks = parseFloat(prompt(`Enter marks for ${subject}:`));
+    return marks;
+}
+
+let subject1 = promptForMarks("Subject 1");
+let subject2 = promptForMarks("Subject 2");
+let subject3 = promptForMarks("Subject 3");
+let subject4 = promptForMarks("Subject 4");
+let subject5 = promptForMarks("Subject 5");
+
+let isValid = true;
+let subjects = [subject1, subject2, subject3, subject4, subject5];
+for (let i = 0; i < subjects.length; i++) {
+    if (isNaN(subjects[i]) || subjects[i] < 0 || subjects[i] > 100) {
+        isValid = false;
+        break;
+    }
+}
+
+if (isValid)
+ {
+    let result = checkPassOrFail(subject1, subject2, subject3, subject4, subject5);
+
+    console.log("Result: " + result);
+    alert("Result: " + result);
+} 
+else {
+    console.log("Invalid input. Please enter valid marks between 0 and 100.");
+    alert("Invalid input. Please enter valid marks between 0 and 100.");
+}
+
+    </script>
+</body>
+</html>

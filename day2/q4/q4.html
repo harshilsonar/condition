@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function checkVoterEligibility(age, isCitizen) {
+    const votingAge = 18;
+
+    if (age >= votingAge && isCitizen) {
+        return "You are eligible to vote.";
+    } else if (age < votingAge) {
+        return "You are not old enough to vote.";
+    } else if (!isCitizen) {
+        return "You must be a citizen to vote.";
+    } else {
+        return "Invalid input. Please enter valid age and citizenship status.";
+    }
+}
+
+let age = parseInt(prompt("Enter your age:"));
+let isCitizen = confirm("Are you a citizen? Click OK for Yes, Cancel for No.");
+
+if (!isNaN(age) && age >= 0)
+ {
+    let eligibilityMessage = checkVoterEligibility(age, isCitizen);
+
+    console.log(eligibilityMessage);
+    alert(eligibilityMessage);
+} else {
+    console.log("Invalid input. Please enter a valid age.");
+    alert("Invalid input. Please enter a valid age.");
+}
+
+    </script>
+</body>
+</html>

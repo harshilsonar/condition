@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calculateIncomeTax(income) {
+    let tax = 0;
+
+    if (income <= 250000) {
+        tax = 0; 
+    } 
+    else if (income > 250000 && income <= 500000) {
+        tax = (income - 250000) * 0.05; 
+    } 
+    else if (income > 500000 && income <= 1000000) {
+        tax = 12500 + (income - 500000) * 0.2; 
+    } 
+    else {
+        tax = 112500 + (income - 1000000) * 0.3; 
+    }
+
+    return tax;
+}
+
+let income = parseFloat(prompt("Enter your income:"));
+
+if (income > 0 && !isNaN(income)) {
+    let taxAmount = calculateIncomeTax(income);
+
+    console.log("Income tax: ₹" + taxAmount.toFixed(2));
+    alert("Income tax: ₹" + taxAmount.toFixed(2));
+} 
+else {
+    console.log("Invalid input. Please enter a positive number for income.");
+    alert("Invalid input. Please enter a positive number for income.");
+}
+
+    </script>
+</body>
+</html>

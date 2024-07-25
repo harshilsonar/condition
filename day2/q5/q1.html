@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function personage(age)
+        {
+            if(age<=0)
+        {
+            return "invalid age";
+        }
+        else if(age<=1)
+        {
+            return "infant";
+        }
+        else if(age<=3)
+        {
+            return "toddler";
+        }
+        else if(age<=12)
+        {
+            return "child";
+        }
+        else if(age<=19)
+        {
+            return "teenager";
+        }
+        else if(age<=35)
+        {
+            return "young adult";
+        }
+        else if(age<=50)
+        {
+            return "adult";
+        }
+        else if(age<=65)
+        {
+            return "middle-aged adult";
+        }
+        else
+        {
+            return "senior";
+        }
+        }
+
+        let age = prompt("enter the age");
+        age= parseInt(age,10);
+
+        if (!isNaN(age))
+         {
+       let ageGroup = personage(age);
+      console.log(`The person is classified as: ${ageGroup}`);
+} 
+else
+ {
+    console.log("Invalid input. Please enter a valid number.");
+}
+    </script>
+</body>
+</html>

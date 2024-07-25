@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function checkPasswordStrength(password) 
+        {
+    let minLength = 8;
+    let hasUppercase = false;
+    let hasLowercase = false;
+    let hasDigit = false;
+    let hasSpecialChar = false;
+    let specialCharPattern = /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]/;
+
+    if (password.length < minLength) {
+        return "Weak: Password should be at least 8 characters long.";
+    }
+
+   for (let i = 0; i < password.length; i++) {
+        let char = password.charAt(i);
+        if (char >= 'A' && char <= 'Z') {
+            hasUppercase = true;
+        } else if (char >= 'a' && char <= 'z') {
+            hasLowercase = true;
+        } else if (char >= '0' && char <= '9') {
+            hasDigit = true;
+        } else if (specialCharPattern.test(char)) {
+            hasSpecialChar = true;
+        }
+    }
+
+    if (hasUppercase && hasLowercase && hasDigit && hasSpecialChar) {
+        return "Strong: Password meets all requirements.";
+    } else {
+        let missing = [];
+        if (!hasUppercase) missing.push("uppercase letters");
+        if (!hasLowercase) missing.push("lowercase letters");
+        if (!hasDigit) missing.push("digits");
+        if (!hasSpecialChar) missing.push("special characters");
+
+        return "Medium: Password is missing " + missing.join(", ") + ".";
+    }
+}
+
+let password = prompt("Enter your password:");
+
+if (password)
+ {
+    let strength = checkPasswordStrength(password);
+    console.log("Password Strength: " + strength);
+    alert("Password Strength: " + strength);
+} 
+else {
+    console.log("Invalid input. Please enter a password.");
+    alert("Invalid input. Please enter a password.");
+}
+
+    </script>
+</body>
+</html>

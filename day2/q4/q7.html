@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calculateProfitOrLoss(costPrice, sellingPrice) {
+    if (sellingPrice > costPrice) {
+        let profit = sellingPrice - costPrice;
+        return `Profit of $${profit.toFixed(2)}`;
+    } else if (sellingPrice < costPrice) {
+        let loss = costPrice - sellingPrice;
+        return `Loss of $${loss.toFixed(2)}`;
+    } else {
+        return "No profit, no loss";
+    }
+}
+let costPrice = 100;
+let sellingPrice = 120;  
+let result = calculateProfitOrLoss(costPrice, sellingPrice);
+
+console.log(result);
+
+    </script>
+</body>
+</html>

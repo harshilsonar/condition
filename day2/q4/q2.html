@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calculateDiscount(totalAmount) {
+    let discount = 0;
+
+    if (totalAmount > 1000) {
+        discount = totalAmount * 0.2; 
+    } else if (totalAmount > 500) {
+        discount = totalAmount * 0.1;
+    } else if (totalAmount > 0) {
+        discount = totalAmount * 0.05; 
+    } else {
+        console.log("Invalid input. Please enter a positive amount.");
+        return NaN;
+    }
+
+    return discount;
+}
+
+let totalAmount = parseFloat(prompt("Enter total amount spent:"));
+
+if (totalAmount > 0 && !isNaN(totalAmount)) {
+    let discountAmount = calculateDiscount(totalAmount);
+
+    console.log("Discount amount: $" + discountAmount.toFixed(2));
+    alert("Discount amount: $" + discountAmount.toFixed(2));
+} 
+else {
+    console.log("Invalid input. Please enter a positive amount.");
+    alert("Invalid input. Please enter a positive amount.");
+}
+
+    </script>
+</body>
+</html>

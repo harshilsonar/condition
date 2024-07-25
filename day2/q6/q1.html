@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function add(a,b)
+        {
+            return a + b;
+        }
+        function subtract(a,b)
+        {
+            return a-b;
+        }
+        function multiplication(a,b)
+        {
+            return a * b;
+        }
+        function divide(a,b)
+        {
+           if(b!==0)
+           {
+            return a/b;
+           }
+           else
+           {
+            return "Error: Division by zero is not allowed."
+           }
+        }
+
+        let total=prompt("Enter the operation you want to perform (add, subtract, multiply, divide):").toLowerCase();
+
+        let num1=parseFloat(prompt("enter the first number"));
+        let num2=parseFloat(prompt("enter the second number"));
+
+
+        if (!isNaN(num1) && !isNaN(num2))
+         {
+    let result;
+    if (total === "add")
+     {
+        result = add(num1, num2);
+    }
+     else if (total === "subtract")
+     {
+        result = subtract(num1, num2);
+    } 
+    else if (total === "multiplication")
+     {
+        result = multiplication(num1, num2);
+    } 
+    else if (total === "divide")
+     {
+        result = divide(num1, num2);
+    } 
+    else
+     {
+        result = "Invalid operation. Please enter add, subtract, multiply, or divide.";
+    }
+    console.log(`The result of the operation is: ${result}`);
+} 
+else
+ {
+    console.log("Invalid input. Please enter valid numbers.");
+}
+    </script>
+</body>
+</html>

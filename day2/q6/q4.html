@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function calculateGrade(average)
+         {
+    if (average >= 90)
+     {
+        return "A";
+    } 
+    else if (average >= 80)
+     {
+        return "B";
+    } 
+    else if (average >= 70)
+     {
+        return "C";
+    } 
+    else if (average >= 60) 
+    {
+        return "D";
+    }
+     else
+      {
+        return "F";
+    }
+}
+
+let choice = prompt("Do you want to calculate the overall grade? (yes/no):").toLowerCase();
+
+if (choice === 'yes')
+ {
+    let mark1 = parseFloat(prompt("Enter the marks for subject 1:"));
+    let mark2 = parseFloat(prompt("Enter the marks for subject 2:"));
+    let mark3 = parseFloat(prompt("Enter the marks for subject 3:"));
+    let mark4 = parseFloat(prompt("Enter the marks for subject 4:"));
+    let mark5 = parseFloat(prompt("Enter the marks for subject 5:"));
+
+    if (!isNaN(mark1) && !isNaN(mark2) && !isNaN(mark3) && !isNaN(mark4) && !isNaN(mark5)) 
+    {
+        let total = mark1 + mark2 + mark3 + mark4 + mark5;
+        let average = total / 5;
+        let grade = calculateGrade(average);
+        console.log(`The overall grade for the student is: ${grade}`);
+    } 
+    else 
+    {
+        console.log("Invalid input. Please enter valid numbers for all marks.");
+    }
+} 
+else if (choice === 'no')
+ {
+    console.log("You chose not to calculate the overall grade.");
+} 
+else 
+{
+    console.log("Invalid input. Please enter 'yes' or 'no'.");
+}
+
+    </script>
+</body>
+</html>

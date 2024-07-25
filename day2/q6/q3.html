@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function determineTriangleType(a, b, c) {
+    if (a === b && b === c) {
+        return "Equilateral";
+    } 
+    else if (a === b || b === c || a === c) 
+    {
+        return "Isosceles";
+    }
+     else 
+     {
+        return "Scalene";
+    }
+}
+
+let choice = prompt("Do you want to determine the type of triangle? (yes/no):").toLowerCase();
+if (choice === 'yes')
+ {
+    let side1 = parseFloat(prompt("Enter the length of the first side:"));
+    let side2 = parseFloat(prompt("Enter the length of the second side:"));
+    let side3 = parseFloat(prompt("Enter the length of the third side:"));
+
+    if (!isNaN(side1) && !isNaN(side2) && !isNaN(side3))
+     {
+        let triangleType = determineTriangleType(side1, side2, side3);
+        console.log(`The triangle with sides ${side1}, ${side2}, and ${side3} is ${triangleType}.`);
+    } 
+    else
+     {
+        console.log("Invalid input. Please enter valid numbers for the sides.");
+    }
+} 
+else if (choice === 'no')
+ {
+    console.log("You chose not to determine the type of triangle.");
+} else {
+    console.log("Invalid input. Please enter 'yes' or 'no'.");
+}
+
+    </script>
+</body>
+</html>
